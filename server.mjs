@@ -1,24 +1,17 @@
-import express from 'express';
-const app =express();
+import express from "express";
+const app = express();
 
+const PORT = process.env.PORT || 3000;
 
-const port = 3000
-
-app.use((req,res,next)=>{
-    console.log("a request came", Date.now());
-    next()
+app.get("/", (req, res) => {
+    res.send("I am a hello world server");
 })
-
-app.get('/profile', (req, res) => {
-  res.send('here is your profile')
+app.get("/profile", (req, res) => {
+    res.send("here is your profile");
 })
-app.get('/home', (req, res) => {
-    res.send('here is your home')
+app.get("/about", (req, res) => {
+    res.send("some information about me");
 })
-app.get('/', (req, res) => {
-    res.send('Hi I am a hello world Server program')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(PORT, () => {
+    console.log(`server is running on port ${PORT}`);
+});
