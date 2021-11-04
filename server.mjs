@@ -13,5 +13,5 @@ app.get("/about", (req, res) => {
     res.send("some information about me");
 })
 app.listen(port, () => {
-    console.log(`server is running on port ${PORT}`);
+    console.log(`server is running on port ${port}`);
 });
